@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace CargoShip.Factories
 {
 
-    public static class ContainerFactory
+    public class ContainerFactory : IContainerFactory
     {
         private static Random random = new Random();
 
-        public static Container CreateRandomContainer()
+        public Container CreateRandomContainer()
         {
             ContentType contentType = GetRandomContentType();
 

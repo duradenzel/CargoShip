@@ -11,18 +11,19 @@ namespace CargoShip
     public class Harbor
     {
         public List<Container> Containers;
-        public Harbor()
-        {
- 
-        }
+        private readonly IContainerFactory containerFactory;
 
+        public Harbor(IContainerFactory containerFactory)
+        {
+            this.containerFactory = containerFactory;
+        }
         public void CreateContainers(int amount)
         {
             List<Container> containers = new();
             for (int i = 0; i < amount; i++)
             {
                 
-                containers.Add(ContainerFactory.CreateRandomContainer());
+                containers.Add(containerFactory.CreateRandomContainer());
             }
             containers = containers.OrderBy(c =>
             {
