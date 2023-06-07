@@ -27,7 +27,6 @@ namespace CargoShip
             }
             else
             {
-                // Placement failed, return false
                 return false;
             }
         }

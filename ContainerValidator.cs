@@ -52,9 +52,8 @@ namespace CargoShip
                 for (int column = 0; column < columns; column++)
                 {
                     if (row < rows / 2)
-                    {
-                        leftWeight += layout[row, column].Sum(c => c.Weight);
-                    }
+                    leftWeight += layout[row, column].Sum(c => c.Weight);
+                    
                 }
             }
 
@@ -72,9 +71,8 @@ namespace CargoShip
                 for (int column = 0; column < columns; column++)
                 {
                     if (row >= rows / 2)
-                    {
-                        rightWeight += layout[row, column].Sum(c => c.Weight);
-                    }
+                    rightWeight += layout[row, column].Sum(c => c.Weight);
+                    
                 }
             }
 

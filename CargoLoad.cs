@@ -18,34 +18,13 @@ namespace CargoShip
 
         private int LeftWeight { get; set; }
         private int RightWeight { get; set; }
-        private const double Balance = 0.2;
         private int Rows { get; }
         private int Columns { get; }
-
-        public int GetRows()
-        {
-            return Rows;
-        }
-
-        public int GetColumns()
-        {
-            return Columns;
-        }
-
-        public List<Container>[,] GetLayout()
-        {
-            return layout;
-        }
-
-        public int GetLeftWeight()
-        {
-            return LeftWeight;
-        }
-
-        public int GetRightWeight()
-        {
-            return RightWeight;
-        }
+        public int GetRows(){return Rows;}
+        public int GetColumns(){return Columns;}
+        public List<Container>[,] GetLayout(){return layout;}
+        public int GetLeftWeight(){ return LeftWeight;}
+        public int GetRightWeight(){return RightWeight;}
 
 
         //We geven de containerValidator mee in de constructor van de CargoLoad zodat hij ontkoppelt is van de cargoclass zelf
@@ -119,10 +98,11 @@ namespace CargoShip
                 }
             }
 
-            
+            PlacementWriter placementWriter = new PlacementWriter(this);
             placementWriter.PrintContainerPlacementOverview();
             placementWriter.PrintBalanceOverview();
         }
+
     }
 
 
