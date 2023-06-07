@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CargoShip", "CargoShip.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "..\Tests\Tests.csproj", "{12F841E9-8BFF-4C57-B17B-BB1E912A5D23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CargoShipTests", "..\CargoShipTests\CargoShipTests.csproj", "{19B4C333-A546-4FF8-BB4E-88ABFB061703}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{12F841E9-8BFF-4C57-B17B-BB1E912A5D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12F841E9-8BFF-4C57-B17B-BB1E912A5D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12F841E9-8BFF-4C57-B17B-BB1E912A5D23}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19B4C333-A546-4FF8-BB4E-88ABFB061703}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19B4C333-A546-4FF8-BB4E-88ABFB061703}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19B4C333-A546-4FF8-BB4E-88ABFB061703}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19B4C333-A546-4FF8-BB4E-88ABFB061703}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
