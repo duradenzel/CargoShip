@@ -11,7 +11,7 @@ namespace CargoShip
     {
         public string CanContainerBePlaced(Container container, List<Row> rows, int rowIndex, int columnIndex)
         {
-            // Validation logic here
+            
 
             return "";
         }

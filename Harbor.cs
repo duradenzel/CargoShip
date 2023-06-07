@@ -11,6 +11,8 @@ namespace CargoShip
     public class Harbor
     {
         public List<Container> Containers;
+
+      
         public Harbor()
         {
  
@@ -38,9 +40,9 @@ namespace CargoShip
             this.Containers = containers;
 
         }
-        public Ship CreateShip(int rows, int columns, IContainerValidator containerValidator, IContainerPlacer containerPlacer)
+        public Ship CreateShip(int rows, int columns)
         {
-            Ship ship = new Ship(rows, columns, containerValidator, containerPlacer);
+            Ship ship = new Ship(rows, columns);
             return ship;
         }
 
