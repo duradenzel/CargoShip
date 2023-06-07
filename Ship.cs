@@ -15,15 +15,16 @@ namespace CargoShip
 
         public CargoLoad Cargo { get; }
 
-        public Ship(int rows, int columns)
+        public Ship(int rows, int columns, IContainerValidator containerValidator, IContainerPlacer containerPlacer)
         {
             Rows = rows;
             Columns = columns;
             MaxWeight = rows * columns * 150000;
 
-            Cargo = new CargoLoad(Rows, Columns);
+            Cargo = new CargoLoad(rows, columns, containerValidator, containerPlacer);
         }
     }
+
 
 
 

@@ -2,9 +2,7 @@
 using CargoShip.Factories;
 using CargoShip.Interfaces;
 
-IContainerFactory containerFactory = new ContainerFactory(); 
-
-Harbor harbor = new Harbor(containerFactory); 
+Harbor harbor = new Harbor();
 
 int r, c, a;
 bool validInput = false;
@@ -30,4 +28,3 @@ do
 harbor.CreateContainers(a);
 Ship ship = harbor.CreateShip(r, c);
 ship.Cargo.LoadContainers(harbor.Containers);
-

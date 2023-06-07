@@ -39,12 +39,14 @@ namespace CargoShip
             this.Containers = containers;
 
         }
-        public Ship CreateShip(int rows, int columns) {
-            Ship ship = new(rows, columns);
+        public Ship CreateShip(int rows, int columns, IContainerValidator containerValidator, IContainerPlacer containerPlacer)
+        {
+            Ship ship = new Ship(rows, columns, containerValidator, containerPlacer);
             return ship;
         }
-        
+
+
     }
 
-   
+
 }
