@@ -8,7 +8,6 @@ namespace CargoShip.Interfaces
 {
     public interface IContainerValidator
     {
-        string ValidateContainerPlacement(Container container, List<Container>[,] layout, int row, int column);
-
+        string ValidateContainerPlacement(Container container, List<Container> containers);
     }
 }

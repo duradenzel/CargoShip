@@ -10,13 +10,15 @@ namespace CargoShip
     public class Row
     {
         private List<Column> columns;
+        
 
-        public Row(int columnCount)
+        public Row(int columnCount, IContainerPlacer containerPlacer)
         {
+            
             columns = new List<Column>();
             for (int i = 0; i < columnCount; i++)
             {
-                columns.Add(new Column());
+                columns.Add(new Column(containerPlacer));
             }
         }
 

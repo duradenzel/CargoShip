@@ -10,11 +10,7 @@ namespace CargoShip
 {
     public class Harbor
     {
-        public List<Container> Containers;
-        public Harbor()
-        {
- 
-        }
+        public List<Container> Containers;       
 
         public void CreateContainers(int amount)
         {
