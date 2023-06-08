@@ -17,14 +17,16 @@ namespace CargoShip.Writers
 
         public void PrintContainerPlacementOverview()
         {
-
-
             Console.WriteLine("\n--- Container Placement Overview ---");
-            for (int row = 0; row < cargoLoad.GetRows(); row++)
+            List<Row> rows = cargoLoad.GetRows();
+            for (int row = 0; row < rows.Count; row++)
             {
-                for (int column = 0; column < cargoLoad.GetColumns(); column++)
+                Row currentRow = rows[row];
+                List<Column> columns = currentRow.GetColumns();
+                for (int column = 0; column < columns.Count; column++)
                 {
-                    List<Container> localContainers = cargoLoad.GetLayout()[row, column];
+                    Column currentColumn = columns[column];
+                    List<Container> localContainers = currentColumn.GetContainers();
                     int containerCount = localContainers.Count;
                     int totalWeight = localContainers.Sum(c => c.Weight);
 
@@ -36,8 +38,11 @@ namespace CargoShip.Writers
         public void PrintBalanceOverview()
         {
             Console.WriteLine("\n--- Balance Overview ---");
-            Console.WriteLine($"{cargoLoad.GetLeftWeight()} / {cargoLoad.GetRightWeight()}");
+            int leftWeight = cargoLoad.GetLeftWeight();
+            int rightWeight = cargoLoad.GetRightWeight();
+            Console.WriteLine($"{leftWeight} / {rightWeight}");
         }
     }
+
 
 }

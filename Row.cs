@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CargoShip.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,25 +9,38 @@ namespace CargoShip
 {
     public class Row
     {
-        public List<Container> Containers;
+        private List<Column> columns;
 
-        public Row()
+        public Row(int columnCount)
         {
-            Containers = new List<Container>();
+            columns = new List<Column>();
+            for (int i = 0; i < columnCount; i++)
+            {
+                columns.Add(new Column());
+            }
         }
 
-        public void AddContainer(Container container, int columnIndex)
+        public List<Column> GetColumns()
         {
-            Containers.Insert(columnIndex, container);
+            return columns;
         }
 
-        public bool CanContainerBePlaced(Container container)
+        public bool TryPlaceContainer(Container container, out string errorMessage)
         {
-            // Container placement validation logic specific to the row
-            // Return true if the container can be placed, false otherwise
-            return true;
+            foreach (Column column in columns)
+            {
+                if (column.TryPlaceContainer(container, out errorMessage))
+                {
+                    return true;
+                }
+            }
+
+            errorMessage = "Unable to place the container in any column of the row.";
+            return false;
         }
 
-        // Other methods and properties related to row management
+
     }
+
+
 }
