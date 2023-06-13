@@ -16,9 +16,9 @@ namespace CargoShip
             this.containerValidator = containerValidator;
         }
 
-        public bool PlaceContainer(Container container, List<Container> containers, out string errorMessage)
+        public bool PlaceContainer(Container container, List<Container> containers, int rowIndex, out string errorMessage)
         {
-            errorMessage = containerValidator.ValidateContainerPlacement(container, containers);
+            errorMessage = containerValidator.ValidateContainerPlacement(container, rowIndex, containers);
 
             if (string.IsNullOrEmpty(errorMessage))
             {

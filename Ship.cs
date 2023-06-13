@@ -22,7 +22,7 @@ namespace CargoShip
             MaxWeight = rows * columns * 150000;
 
             IContainerValidator containerValidator = new ContainerValidator();
-            Cargo = new CargoLoad(rows, columns, containerValidator);
+            Cargo = new CargoLoad(rows, columns, containerValidator, MaxWeight);
         }
 
     }

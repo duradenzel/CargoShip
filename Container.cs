@@ -44,9 +44,10 @@ namespace CargoShip
         Food,
         Clothes,
         Tools,
-        Water
-        
-       
+        Water,
+        WackyWavingInflatableTubeGuy
+
+
     }
 
 }

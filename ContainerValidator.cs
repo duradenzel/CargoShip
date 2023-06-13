@@ -10,11 +10,11 @@ namespace CargoShip
 
     public class ContainerValidator : IContainerValidator
     {
-        public string ValidateContainerPlacement(Container container, List<Container> containers)
+        public string ValidateContainerPlacement(Container container, int rowIndex, List<Container> containers)
         {
-            if (container.IsRefrigerated && containers.Count > 0)
+            if (container.IsRefrigerated && rowIndex != 0)
             {
-                return "Refrigerated containers can only be placed in an empty column.";
+                return "Refrigerated containers can only be placed in the first row.";
             }
 
             int totalWeight = containers.Sum(c => c.Weight) + container.Weight;

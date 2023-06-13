@@ -10,11 +10,9 @@ namespace CargoShip
     public class Row
     {
         private List<Column> columns;
-        
 
         public Row(int columnCount, IContainerPlacer containerPlacer)
-        {
-            
+        {         
             columns = new List<Column>();
             for (int i = 0; i < columnCount; i++)
             {
@@ -27,22 +25,18 @@ namespace CargoShip
             return columns;
         }
 
-        public bool TryPlaceContainer(Container container, out string errorMessage)
-        {
-            foreach (Column column in columns)
-            {
-                if (column.TryPlaceContainer(container, out errorMessage))
+        public bool TryPlaceContainer(Container container, int rowIndex, out string errorMessage)
+        {       
+                foreach (Column column in columns)
                 {
-                    return true;
+                    if (column.TryPlaceContainer(container, rowIndex, out errorMessage))
+                    {
+                        return true;
+                    }
                 }
-            }
 
-            errorMessage = "Unable to place the container in any column of the row.";
-            return false;
+                errorMessage = "Unable to place the container in any column of the row.";
+                return false;        
         }
-
-
     }
-
-
 }

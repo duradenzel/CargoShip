@@ -23,9 +23,14 @@ namespace CargoShip
             return containers;
         }
 
-        public bool TryPlaceContainer(Container container, out string errorMessage)
+        public int GetTotalWeight()
         {
-            return containerPlacer.PlaceContainer(container, containers, out errorMessage);
+            return containers.Sum(c => c.Weight);
+        }
+
+        public bool TryPlaceContainer(Container container, int rowIndex, out string errorMessage)
+        {
+            return containerPlacer.PlaceContainer(container, containers, rowIndex, out errorMessage);
         }
     }
 

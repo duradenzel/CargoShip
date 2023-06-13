@@ -8,7 +8,7 @@ namespace CargoShip.Interfaces
 {
     public interface IContainerPlacer
     {
-        bool PlaceContainer(Container container, List<Container> containers, out string errorMessage);
+        bool PlaceContainer(Container container, List<Container> containers, int rowIndex, out string errorMessage);
     }
 
 
