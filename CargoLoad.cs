@@ -21,7 +21,7 @@ namespace CargoShip
 
     
 
-        public CargoLoad(int rows, int columns, IContainerValidator containerValidator, int maxWeight)
+        public CargoLoad(int rows, int columns, int maxWeight)
         {
             MaxWeight = maxWeight;
             this.rows = new List<Row>();
